@@ -29,10 +29,11 @@ public class CpuWizzardController {
     public CpuRecomendation recomendation(@RequestBody CpuCriteriaDto criteria){
         return recomendationService.GetRecomendation(criteria);
     }
-
+    
+    @CrossOrigin(origins = "http://127.0.0.1:4200")
     @GetMapping("/saiba-mais")
     public String getRecommendationText() {
-        return "{\n" +
+        return "{" +
                 "  \"message\": \"Recomendação de CPU:\\n\\n" +
                 "- Consumo de Energia: \\n" +
                 "  -Low: CPUs com baixo consumo de energia são mais eficientes e indicadas para tarefas simples, como navegação na web e uso de aplicativos leves. Elas ajudam a reduzir os custos com eletricidade e são ideais para dispositivos que precisam de maior autonomia de bateria.\\n" +
